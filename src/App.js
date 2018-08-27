@@ -38,13 +38,14 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
       font: 'inherit',
+      color: 'white',
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer'
     };
-
+    let classes = [];
     let persons = null;
 
     if (this.state.showPersons) {
@@ -65,11 +66,23 @@ class App extends Component {
           })}
         </div>
       );
+
+      style.backgroundColor = 'red';
     }
+
+    if (this.state.persons.length <= 2) {
+      classes.push('red');
+    }
+    if (this.state.persons.length <= 1) {
+      classes.push('bold');
+    }
+
+    classes = classes.join(' ');
 
     return (
       <div className="App">
         <h1>Awesome stuff here!!!</h1>
+        <p className={classes}>It's alive</p>
         <button
           style={style}
           onClick={this.togglePersonsHandler}>Toggle Persons</button>
