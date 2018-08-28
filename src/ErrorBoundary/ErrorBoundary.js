@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class errorBoundary extends Component {
+class ErrorBoundary extends Component {
     state = {
         hasError: false,
         errorMessage: ''
