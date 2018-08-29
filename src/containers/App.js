@@ -4,6 +4,34 @@ import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    console.log('[App.js] inside constructor', props);
+  }
+
+  componentWillMount() {
+    console.log('[App.js] inside componentWillMount()');
+  }
+
+  componentDidMount() {
+    console.log('[App.js] inside componentDidMount()');
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('[UPDATE App.js] inside shouldComponentUpdate', nextProps, nextState);
+
+    return true;
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    console.log('[UPDATE App.js] inside componentWillUpdate', nextProps, nextState);
+  }
+
+  componentDidUpdate() {
+    console.log('[UPDATE App.js] inside componentDidUpdate()');
+  }
+
   state = {
     persons: [
       { id: '239pg1', name: 'Bill', age: 31 },
@@ -38,6 +66,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('[App.js] inside render()');
     let persons = null;
     
     if (this.state.showPersons) {
