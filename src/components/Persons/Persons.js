@@ -5,6 +5,8 @@ class Persons extends PureComponent {
   constructor(props) {
     super(props);
 
+    this.lastPersonRef = React.createRef();
+
     console.log('[Persons.js] inside constructor', props);
   }
 
@@ -36,6 +38,7 @@ class Persons extends PureComponent {
           click={() => { this.props.clicked(index); }}
           name={person.name}
           age={person.age}
+          ref={this.lastPersonRef}
           key={person.id}
           position={index}
           changed={(event) => { this.props.changed(event, person.id) }}
