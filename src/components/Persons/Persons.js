@@ -45,7 +45,7 @@ class Persons extends PureComponent {
           changed={(event) => { this.props.changed(event, person.id) }}
         >
           My Hobbies: Milruck
-          </Person>
+        </Person>
     ));
   }
 }
